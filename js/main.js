@@ -82,7 +82,7 @@ const cityWinner =  profitPerCity(localMarketsWithprofit, distanceToCities).redu
 
 // Mostrar en pantalla
 const showSolution = () => {
-    const el = document.querySelector('.title');
+    const el = document.querySelector('.solution');
     el.innerHTML = cityWinner.city;
 }
 
