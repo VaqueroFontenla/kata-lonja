@@ -75,7 +75,7 @@ const costFixLoadTruck = 5;
 const costPerKm = 2;
 
 const lostPercent = 0.1;
-const lostKms = 1000;
+const lostKms = 100;
 
 export {
     localMarkets,
