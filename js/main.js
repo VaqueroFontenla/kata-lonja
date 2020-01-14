@@ -50,7 +50,7 @@ const calculateprofitPerCity = (localMarketsWithprofit,city) => {
     return profitCity;
 }
 
-// Cálculo del beneficio neto por ciudad
+// Cálculo del beneficio neto de cada ciudad
 const calculateNetProfit = (localMarketsWithprofit, distanceToCity,costFixLoadTruck, costPerKm, lostPercent, lostKms ) => {
     let netProfit = calculateprofitPerCity(localMarketsWithprofit, distanceToCity.city) 
                     - calculateTransportToCity(costFixLoadTruck, costPerKm, distanceToCity.distance) 
@@ -58,7 +58,7 @@ const calculateNetProfit = (localMarketsWithprofit, distanceToCity,costFixLoadTr
     return netProfit;
 }
 
-// Cálculo del beneficio neto por ciudad
+// Cálculo del beneficio neto de las ciudades
 const profitPerCity = (localMarketsWithprofit, distanceToCities) => {
     let profitByCity = distanceToCities.map( distanceToCity => {
         return {
@@ -69,7 +69,6 @@ const profitPerCity = (localMarketsWithprofit, distanceToCities) => {
     
     return profitByCity;
 }
-console.log(profitPerCity(localMarketsWithprofit, distanceToCities));
 
 // Cálculo de la ciudad con mayor beneficio
 const cityWinner =  profitPerCity(localMarketsWithprofit, distanceToCities).reduce((accum, cityCandidate) => {
@@ -77,7 +76,6 @@ const cityWinner =  profitPerCity(localMarketsWithprofit, distanceToCities).redu
         return cityCandidate;
         return accum;
   });
-  console.log(cityWinner);
 
 
 // Mostrar en pantalla
